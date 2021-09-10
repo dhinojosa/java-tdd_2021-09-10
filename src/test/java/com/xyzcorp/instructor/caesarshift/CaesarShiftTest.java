@@ -32,8 +32,8 @@ public class CaesarShiftTest {
     //    maybe? BiFunction<Integer, String, String>  = (i, s) -> (s) -> encode(i,s)
 
     //    z -> a
-    //    ~ -> ~
-
+    //    Capital Letters
+    //    More than one letter
 
     @SuppressWarnings("ConstantConditions")
     @Test
@@ -51,7 +51,9 @@ public class CaesarShiftTest {
             Arguments.of(1, "", ""),      //Green
             Arguments.of(1, "a", "b"),    //Red
             Arguments.of(2, "a", "c"),    //Green
-            Arguments.of(1, "~", "~")     //Red
+            Arguments.of(1, "~", "~"),    //Red
+            Arguments.of(1, "z", "a"),    //Red
+            Arguments.of(1, "ab", "bc")   //Red
         );
     }
 
