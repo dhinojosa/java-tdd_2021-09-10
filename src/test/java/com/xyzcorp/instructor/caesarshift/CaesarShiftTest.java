@@ -30,10 +30,14 @@ public class CaesarShiftTest {
     //    CaesarShift.decode(shift, result) -> result;
     //    maybe? BiFunction<Integer, String, String>  = (i, s) -> (s) -> encode(i,s)
 
+    //    z -> a
+    //    ~ -> ~
     private static Stream<Arguments> shiftOriginResultProvider() {
         return Stream.of(
-            Arguments.of(0, "", ""),
-            Arguments.of(0, "a", "a")
+            Arguments.of(0, "", ""),      //Red
+            Arguments.of(0, "a", "a"),    //Red
+            Arguments.of(1, "", ""),      //Green
+            Arguments.of(1, "a", "b")     //Red
         );
     }
 
