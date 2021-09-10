@@ -33,7 +33,6 @@ public class CaesarShiftTest {
 
     //    z -> a
     //    ~ -> ~
-    //    null?
 
 
     @SuppressWarnings("ConstantConditions")
@@ -50,7 +49,8 @@ public class CaesarShiftTest {
             Arguments.of(0, "", ""),      //Red
             Arguments.of(0, "a", "a"),    //Red
             Arguments.of(1, "", ""),      //Green
-            Arguments.of(1, "a", "b")     //Red
+            Arguments.of(1, "a", "b"),    //Red
+            Arguments.of(2, "a", "c")     //Green
         );
     }
 
