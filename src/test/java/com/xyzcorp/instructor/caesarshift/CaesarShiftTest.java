@@ -1,9 +1,10 @@
 package com.xyzcorp.instructor.caesarshift;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.assertj.core.api.ThrowableAssert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -32,6 +33,18 @@ public class CaesarShiftTest {
 
     //    z -> a
     //    ~ -> ~
+    //    null?
+
+
+    @SuppressWarnings("ConstantConditions")
+    @Test
+    void testNullOriginalShouldReturnNullPointerException() {
+        String expectedMessage = "Original string cannot be null";
+        assertThatThrownBy(() -> CaesarShift.encode(0, null))
+            .isInstanceOf(NullPointerException.class)
+            .hasMessage(expectedMessage);
+    }
+
     private static Stream<Arguments> shiftOriginResultProvider() {
         return Stream.of(
             Arguments.of(0, "", ""),      //Red
